@@ -9,14 +9,16 @@
             <thead>
                 <tr>
                     <th>Titre</th>
+                    <th>Detail en image</th>
                     <th>Description</th>
                     <th>Catégorie</th>
                     <th>Prix</th>
+                    <th>Etoile</th>
                 </tr>
             </thead>
-            <tr *ngFor="let livre of livres">
+            <tr [ngStyle]="{'color':livre.Name=='Angular'? 'red': 'blue'}" *ngFor="let livre of livres">
             <td> {{livre.Name}}</td>
-            <td> {{livre.ImageUrl}}</td>
+            <td> {{livre.ImageUrl}}</td> 
             <td> {{livre.ShortDescription}}</td>
             <td> {{livre.Price}}</td>
             <td> {{livre.Category}}</td>
