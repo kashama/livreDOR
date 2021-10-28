@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './courses/course.component';
 import { Course2Component } from './course2/course2.component';
 import { ListeLivresComponent } from './liste-livres/liste-livres.component';
+import { FormsModule } from '@angular/forms';
+import { DeleteSpacePipe } from './pipes/delete-space.pipe';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { ListeLivresComponent } from './liste-livres/liste-livres.component';
     //il faut declarer chaque classe de composant ici
     CourseComponent,
     Course2Component,
-    ListeLivresComponent
+    ListeLivresComponent,
+    DeleteSpacePipe
   ],
   imports: [
     //il faut importer chaque module necessaire ici
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
    
   ],
   //ici il faut mettre services ici

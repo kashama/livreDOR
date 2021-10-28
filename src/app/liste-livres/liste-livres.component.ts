@@ -10,7 +10,8 @@ export class ListeLivresComponent implements OnInit {
   grandTitre:string="La liste des livres";
   WidthImage=60;
   HeightImage=80;
-  affichage: boolean=false;
+  affichage: boolean=true;
+ 
   livres=[{
     id:1,Name:"Big Data For Dummies",ImageUrl:"https://images-na.ssl-images-amazon.com/images/I/51p6wBow%2B3L._SX389_BO1,204,203,200_.jpg",ShortDescription:"Big data management is one of the major challenges facing business, industry, and not-for-profit organizations",Price:98,Category:'Big data',Etoile:3
   },
@@ -40,13 +41,20 @@ export class ListeLivresComponent implements OnInit {
   id:8,Name:"Learning Node.js",ImageUrl:"https://images-na.ssl-images-amazon.com/images/I/41NGBmeH1uL._SX403_BO1,204,203,200_.jpg",ShortDescription:"Learning Node.js Development: Learn the fundamentals of Node.js, and deploy and test Node.js applications on the web",Price:98,Category:'Back-End',Etoile:4.6
             
 }];
+  listCategorie:string[]=['Big data', 'Database','Front-End', 'Back-End', 'FullStack']
+  categoryId:string='all';
+  livreTemp:any[]=[];
   constructor() { }
 
   ngOnInit(): void {
+    this.livreTemp=this.livres;
   }
   onclick(){
     this.affichage=!this.affichage
-
+  }
+  changeCategory(){
+    if(this.categoryId=='all') this.livres=this.livreTemp;
+    this.livres=this.livreTemp.filter(p=> p.Category == this.categoryId);
   }
 
 }
