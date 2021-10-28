@@ -3,14 +3,18 @@
     <div class="card-header" *ngIf="livres.length>0" >
         <h1>{{grandTitre}}</h1>
     </div>
+    <div class="row">
+        <div class="col-2">
+            <button class="btn btn-primary" (click)='onclick()'>Afficher</button>
+        </div>
+    </div>
     <div class="card-body"> 
-       <div class="table-responsive">
-        <table class="table" *ngIf="livres.length>0">
+       <div class="table-responsive" *ngIf="affichage">
+        <table class="table" >
             <thead>
                 <tr>
                     <td>Image</td>
                     <th>Titre</th>
-                    <th>Detail en image</th>
                     <th>Description</th>
                     <th>Catégorie</th>
                     <th>Prix</th>
