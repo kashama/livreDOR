@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ListeLivresComponent } from './liste-livres/liste-livres.component';
 import { FormsModule } from '@angular/forms';
 import { DeleteSpacePipe } from './pipes/delete-space.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EtoileComponent } from './etoile/etoile.component';
 
 
 @NgModule({
@@ -12,13 +14,15 @@ import { DeleteSpacePipe } from './pipes/delete-space.pipe';
     AppComponent,
     //il faut declarer chaque classe de composant ici
     ListeLivresComponent,
-    DeleteSpacePipe
+    DeleteSpacePipe,
+    EtoileComponent
   ],
   imports: [
     //il faut importer chaque module necessaire ici
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
    
   ],
   //ici il faut mettre services ici
