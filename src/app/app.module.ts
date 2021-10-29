@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CourseComponent } from './courses/course.component';
-import { Course2Component } from './course2/course2.component';
 import { ListeLivresComponent } from './liste-livres/liste-livres.component';
 import { FormsModule } from '@angular/forms';
 import { DeleteSpacePipe } from './pipes/delete-space.pipe';
@@ -14,8 +11,6 @@ import { DeleteSpacePipe } from './pipes/delete-space.pipe';
   declarations: [
     AppComponent,
     //il faut declarer chaque classe de composant ici
-    CourseComponent,
-    Course2Component,
     ListeLivresComponent,
     DeleteSpacePipe
   ],

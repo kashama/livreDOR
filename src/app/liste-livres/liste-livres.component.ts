@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './liste-livres.component.html',
   styleUrls: ['./liste-livres.component.css']
 })
-export class ListeLivresComponent implements OnInit {
+export class ListeLivresComponent implements OnInit, OnChanges, AfterContentInit, OnDestroy{
   grandTitre:string="La liste des livres";
   WidthImage=60;
   HeightImage=80;
@@ -44,9 +45,21 @@ export class ListeLivresComponent implements OnInit {
   listCategorie:string[]=['Big data', 'Database','Front-End', 'Back-End', 'FullStack']
   categoryId:string='all';
   livreTemp:any[]=[];
-  constructor() { }
+  constructor() {
+    console.log('constructor: On cree un composant comme le premier evenement');
+   }
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy');
+  }
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit');
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
+  }
 
   ngOnInit(): void {
+    console.log('ngOnInit: on cree le deuxieme evennement')
     this.livreTemp=this.livres;
   }
   onclick(){
