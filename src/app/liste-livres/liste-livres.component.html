@@ -31,13 +31,13 @@
                     <th>Etoile</th>
                 </tr>
             </thead>
-            <tr [ngStyle]="{'color':livre.Name=='Angular'? 'red': 'blue'}" *ngFor="let livre of livres">
-            <td><img [src]="livre.ImageUrl" [height]="HeightImage" [width]="WidthImage"></td>
-            <td> {{livre.Name | uppercase}}</td>
-            <td> {{livre.ShortDescription}}</td>
-            <td> {{livre.Category | uppercase | deleteSpace}}</td>
-            <td> {{livre.Price | currency :"EUR":true | uppercase }}</td>
-            <td> {{livre.Etoile}}</td>
+            <tr [ngStyle]="{'color':livre.Book_Name=='Angular'? 'red': 'blue'}" *ngFor="let livre of livres">
+            <td><img [src]="livre.Book_ImageUrl" [height]="HeightImage" [width]="WidthImage"></td>
+            <td> {{livre.Book_Name | uppercase}}</td>
+            <td> {{livre.Book_ShortDescription}}</td>
+            <td> {{livre.Book_Category | uppercase | deleteSpace}}</td>
+            <td> {{livre.Book_Price | currency :"EUR":true | uppercase }}</td>
+            <td> {{livre.Book_Etoile}}</td>
             </tr>
             <tbody>
             </tbody>
