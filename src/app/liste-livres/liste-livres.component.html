@@ -29,6 +29,7 @@
                     <th>Catégorie</th>
                     <th>Prix</th>
                     <th>Etoile</th>
+                    <th>Detail</th>
                 </tr>
             </thead>
             <tr [ngStyle]="{'color':livre.Book_Name=='Angular'? 'red': 'blue'}" *ngFor="let livre of livres">
@@ -38,7 +39,8 @@
             <td> {{livre.Book_Category | uppercase | deleteSpace}}</td>
             <td> {{livre.Book_Price | currency :"EUR":true | uppercase }}</td>
             <td> <app-etoile [rating]="livre.Book_Etoile" (notify)='onNotifying($event)'></app-etoile></td>
-            </tr>
+            <td><a href="" class="btn btn-primary" [routerLink]="['/livre', livre.Book_Id]">Click ici pour le detail</a></td>
+        </tr>
             <tbody>
             </tbody>
         </table>
