@@ -1,3 +1,26 @@
 <!-- <app-course></app-course>
 <app-course2></app-course2> -->
-<app-liste-livres></app-liste-livres>
+
+<!-- <app-liste-livres></app-liste-livres> -->
+
+
+<nav class="nav navbar-expand navbar-light bg-light">
+    <ul class="nav nav-pills">
+        <li>
+            <a class="nav-link" [routerLink]="['/home']" href="">Accueil</a>
+        </li>
+        <li>
+            <a class="nav-link" [routerLink]="['/livres']" href="">Livres</a>
+        </li>
+        <li>
+            <a class="nav-link" [routerLink]="['/livre/:id']" href=""> Detail du livre</a>
+        </li>
+
+        <li>
+            <a href="" class="nav-link" [routerLink]="['**']" ></a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { DeleteSpacePipe } from './pipes/delete-space.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EtoileComponent } from './etoile/etoile.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailLivreComponent } from './detail-livre/detail-livre.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { EtoileComponent } from './etoile/etoile.component';
     //il faut declarer chaque classe de composant ici
     ListeLivresComponent,
     DeleteSpacePipe,
-    EtoileComponent
+    EtoileComponent,
+    HomeComponent,
+    NotFoundComponent,
+    DetailLivreComponent
   ],
   imports: [
     //il faut importer chaque module necessaire ici
