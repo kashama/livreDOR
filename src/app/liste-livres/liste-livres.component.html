@@ -37,7 +37,7 @@
             <td> {{livre.Book_ShortDescription}}</td>
             <td> {{livre.Book_Category | uppercase | deleteSpace}}</td>
             <td> {{livre.Book_Price | currency :"EUR":true | uppercase }}</td>
-            <td> {{livre.Book_Etoile}}</td>
+            <td> <app-etoile [rating]="livre.Book_Etoile" (notify)='onNotifying($event)'></app-etoile></td>
             </tr>
             <tbody>
             </tbody>

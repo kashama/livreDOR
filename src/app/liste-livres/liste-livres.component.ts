@@ -70,5 +70,7 @@ export class ListeLivresComponent implements OnInit, OnChanges, AfterContentInit
     if(this.categoryId=='all') this.livres=this.livreTemp;
     this.livres=this.livreTemp.filter(p=> p.Book_Category == this.categoryId);
   }
-
+  onNotifying(event:number){
+    alert(event);
+  }
 }
