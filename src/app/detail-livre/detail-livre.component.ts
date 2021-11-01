@@ -11,8 +11,10 @@ export class DetailLivreComponent implements OnInit {
   constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let Book_Id=this.router.snapshot.paramMap.get('Book_Id');
-    console.log(Book_Id);
+    let Book_Id = this.router.snapshot.paramMap.get('Book_Id');
+    //appel de backend pour recuper les details du livre
+      console.log(Book_Id);
+
   }
 
 }
