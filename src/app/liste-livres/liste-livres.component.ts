@@ -20,7 +20,8 @@ export class ListeLivresComponent implements OnInit{
 
   listCategorie:string[]=[];
   categoryId:string='all';
-  livreTemp:any[]=[];
+  //livreTemp:any[]=[];
+  LivreService: any;
   constructor(
     private serviceLivre:LivreService,
     private serviceCategorie:CategoryService
@@ -29,18 +30,43 @@ export class ListeLivresComponent implements OnInit{
    }
   
   ngOnInit(): void {
-    this.livres=this.serviceLivre.getAllLivres();
+    /* this.livres=this.serviceLivre.getAllLivres(); */
+    this.getAllLivres();
     this.listCategorie=this.serviceCategorie.getAllCategories();
-    this.livreTemp=this.livres;
+    /* this.serviceLivre.getAllLivres()
+        .subscribe(lrs=>
+          {
+            this.livres=lrs;
+          }); */
+    /* this.livreTemp=this.livres; */
   }
   onclick(){
     this.affichage=!this.affichage
   }
   changeCategory(){
-    if(this.categoryId=='all') this.livres=this.livreTemp;
-    this.livres=this.livreTemp.filter(p=> p.Book_Category == this.categoryId);
+    /* if(this.categoryId=='all') this.livres=this.livreTemp;
+    this.livres=this.livreTemp.filter(p=> p.Book_Category == this.categoryId); */
+    console.log(this.categoryId);
+    if(this.categoryId=='all')
+    {
+      this.getAllLivres()
+    }
+    else{
+    this.serviceLivre.getLivreByCategory(this.categoryId)
+      .subscribe(ls=>{
+        this.livres=ls;
+      })
+    }
+    
   }
   onNotifying(event:number){
     alert(event);
+  }
+
+  private getAllLivres(){
+    return this.LivreService.getAllLivres()
+    .subscribe((lrs: any)=>{
+      this.livres=lrs;
+    });
   }
 }

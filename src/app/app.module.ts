@@ -10,6 +10,9 @@ import { EtoileComponent } from './etoile/etoile.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailLivreComponent } from './detail-livre/detail-livre.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemHeroService } from './Back-End/backend';
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { DetailLivreComponent } from './detail-livre/detail-livre.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemHeroService),
    
   ],
   //ici il faut mettre services ici
