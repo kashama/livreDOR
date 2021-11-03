@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Pipe } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ILivre } from '../../Models/livre';
@@ -20,6 +20,14 @@ export class LivreService {
   getLivreByCategory(categorie:string):Observable<ILivre[]>{
     return this.getAllLivres().pipe(
       map(x=>x.filter(p=>p.Book_Category==categorie))
+    );
+  }
+  getLivreById(Book_Id:number):Observable<ILivre>{
+    return this.getAllLivres().pipe(
+      map(livres=>{
+        return livres.find(p=>p.Book_Id==Book_Id) as ILivre
+      })
     )
   }
+
 }

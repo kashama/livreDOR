@@ -3,7 +3,7 @@ import { ILivre } from '../Models/livre';
  
 export class InMemHeroService implements InMemoryDbService {
   createDb() {
-      let livres:ILivre[]=[{
+      const livres:ILivre[]=[{
     Book_Id:1,Book_Name:"Big Data For Dummies",Book_ImageUrl:"https://images-na.ssl-images-amazon.com/images/I/51p6wBow%2B3L._SX389_BO1,204,203,200_.jpg",Book_ShortDescription:"Big data management is one of the major challenges facing business, industry, and not-for-profit organizations",Book_Price:98,Book_Category:'Big data', Book_Etoile:3
 },
 {

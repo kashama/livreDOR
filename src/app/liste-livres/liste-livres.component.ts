@@ -14,10 +14,7 @@ export class ListeLivresComponent implements OnInit{
   WidthImage=60;
   HeightImage=80;
   affichage: boolean=true;
- 
   livres:ILivre[]=[];
-
-
   listCategorie:string[]=[];
   categoryId:string='all';
   //livreTemp:any[]=[];

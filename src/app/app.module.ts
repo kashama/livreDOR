@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListeLivresComponent } from './liste-livres/liste-livres.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteSpacePipe } from './pipes/delete-space.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EtoileComponent } from './etoile/etoile.component';
@@ -34,7 +34,7 @@ import { InMemHeroService } from './Back-End/backend';
     NgbModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemHeroService),
-   
+    ReactiveFormsModule
   ],
   //ici il faut mettre services ici
   providers: [],
